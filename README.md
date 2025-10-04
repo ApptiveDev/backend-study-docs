@@ -12,7 +12,7 @@
     - 원본 URL : [신세환의 할 일 관리 CRUD](https://github.com/sinsehwan/study-backend-sample)
 
 ### 과제
-- 게시글 CRUD(생성, 조회, 수정, 삭제) 만들어보기
+- 게시글 CRUD(생성, 조회, 수정, 삭제) 만들어보고 PR 날리기 (본인 이름 브랜치에 PR 요청 보내주세요! : [과제 제출](https://github.com/ApptiveDev/backend-study-sns))
 > POST CRUD
 - e.g. Post
     - content
