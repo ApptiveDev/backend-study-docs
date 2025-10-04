@@ -1,0 +1,10 @@
+# 백엔드 스터디 자료
+
+## 1주차
+
+- 백엔드 개발 여정의 시작
+- 서버의 동작 원리
+- HTTP Method, 상태 코드
+- 유저 플로우 작성해보기
+- Spring Boot 기반 CRUD 예제 살펴보기
+    - 원본 URL : [신세환의 할 일 관리 CRUD](https://github.com/sinsehwan/study-backend-sample)
