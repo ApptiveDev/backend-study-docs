@@ -1,0 +1,67 @@
+---
+config:
+  layout: dagre
+  look: classic
+  theme: base
+---
+flowchart LR
+ subgraph subGraph0["B+Tree Structure"]
+        RootB("Root Index Node<br>[K:10] [K:25]")
+        InternalB1("Index Node<br>[K:3] [K:7]")
+        InternalB2("Index Node<br>[K:15] [K:20]")
+        InternalB3("Index Node<br>[K:30] [K:35]")
+        LeafB1("Leaf (Data)<br>[K:1,D:I] [K:2,D:J]")
+        LeafB2("Leaf (Data)<br>[K:3,D:K] [K:5,D:L]")
+        LeafB3("Leaf (Data)<br>[K:7,D:M] [K:9,D:N]")
+        LeafB4("Leaf (Data)<br>[K:10,D:O] [K:13,D:P]")
+        LeafB5("Leaf (Data)<br>[K:15,D:Q] [K:18,D:R]")
+        LeafB6("Leaf (Data)<br>[K:20,D:S] [K:23,D:T]")
+        LeafB7("Leaf (Data)<br>[K:25,D:U] [K:29,D:V]")
+        LeafB8("Leaf (Data)<br>[K:30,D:W] [K:33,D:X]")
+        LeafB9("Leaf (Data)<br>[K:35,D:Y] [K:38,D:Z]")
+  end
+    RootB -- &lt; 10 --> InternalB1
+    RootB -- "10 &lt;= K &lt; 25" --> InternalB2
+    RootB -- "&gt;= 25" --> InternalB3
+    InternalB1 -- &lt; 3 --> LeafB1
+    InternalB1 -- "3 &lt;= K &lt; 7" --> LeafB2
+    InternalB1 -- "&gt;= 7" --> LeafB3
+    InternalB2 -- &lt; 15 --> LeafB4
+    InternalB2 -- "15 &lt;= K &lt; 20" --> LeafB5
+    InternalB2 -- "&gt;= 20" --> LeafB6
+    InternalB3 -- &lt; 30 --> LeafB7
+    InternalB3 -- "30 &lt;= K &lt; 35" --> LeafB8
+    InternalB3 -- "&gt;= 35" --> LeafB9
+    LeafB1 -- Sequential Link --> LeafB2
+    LeafB2 -- Sequential Link --> LeafB3
+    LeafB3 -- Sequential Link --> LeafB4
+    LeafB4 -- Sequential Link --> LeafB5
+    LeafB5 -- Sequential Link --> LeafB6
+    LeafB6 -- Sequential Link --> LeafB7
+    LeafB7 -- Sequential Link --> LeafB8
+    LeafB8 -- Sequential Link --> LeafB9
+     RootB:::root
+     InternalB1:::index
+     InternalB2:::index
+     InternalB3:::index
+     LeafB1:::data
+     LeafB2:::data
+     LeafB2:::link
+     LeafB3:::data
+     LeafB3:::link
+     LeafB4:::data
+     LeafB4:::link
+     LeafB5:::data
+     LeafB5:::link
+     LeafB6:::data
+     LeafB6:::link
+     LeafB7:::data
+     LeafB7:::link
+     LeafB8:::data
+     LeafB8:::link
+     LeafB9:::data
+     LeafB9:::link
+    classDef root fill:#f9f,stroke:#333,stroke-width:2px
+    classDef index fill:#bbf,stroke:#333,stroke-width:2px
+    classDef data fill:#dfd,stroke:#333,stroke-width:2px
+    classDef link fill:none,stroke:red,stroke-width:2px,stroke-dasharray: 5 5

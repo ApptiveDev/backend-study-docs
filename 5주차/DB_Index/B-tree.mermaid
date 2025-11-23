@@ -1,0 +1,46 @@
+flowchart LR
+ subgraph subGraph0["B-Tree Structure"]
+        Root("Root Node<br>[K:10,D:A] [K:25,D:B]")
+        Child1("Node L1-1<br>[K:3,D:C] [K:7,D:D]")
+        Child2("Node L1-2<br>[K:15,D:E] [K:20,D:F]")
+        Child3("Node L1-3<br>[K:30,D:G] [K:35,D:H]")
+        Leaf1("Node L2-1<br>[K:1,D:I] [K:2,D:J]")
+        Leaf2("Node L2-2<br>[K:4,D:K] [K:5,D:L]")
+        Leaf3("Node L2-3<br>[K:8,D:M] [K:9,D:N]")
+        Leaf4("Node L2-4<br>[K:12,D:O] [K:13,D:P]")
+        Leaf5("Node L2-5<br>[K:17,D:Q] [K:18,D:R]")
+        Leaf6("Node L2-6<br>[K:22,D:S] [K:23,D:T]")
+        Leaf7("Node L2-7<br>[K:28,D:U] [K:29,D:V]")
+        Leaf8("Node L2-8<br>[K:32,D:W] [K:33,D:X]")
+        Leaf9("Node L2-9<br>[K:37,D:Y] [K:38,D:Z]")
+  end
+    Root -- &lt; 10 --> Child1
+    Root -- 10 &lt; K &lt; 25 --> Child2
+    Root -- &gt; 25 --> Child3
+    Child1 -- &lt; 3 --> Leaf1
+    Child1 -- 3 &lt; K &lt; 7 --> Leaf2
+    Child1 -- &gt; 7 --> Leaf3
+    Child2 -- &lt; 15 --> Leaf4
+    Child2 -- 15 &lt; K &lt; 20 --> Leaf5
+    Child2 -- &gt; 20 --> Leaf6
+    Child3 -- &lt; 30 --> Leaf7
+    Child3 -- 30 &lt; K &lt; 35 --> Leaf8
+    Child3 -- &gt; 35 --> Leaf9
+
+     Root:::root
+     Child1:::internal
+     Child2:::internal
+     Child3:::internal
+     Leaf1:::leaf
+     Leaf2:::leaf
+     Leaf3:::leaf
+     Leaf4:::leaf
+     Leaf5:::leaf
+     Leaf6:::leaf
+     Leaf7:::leaf
+     Leaf8:::leaf
+     Leaf9:::leaf
+    classDef root fill:#f9f,stroke:#333,stroke-width:2px
+    classDef internal fill:#bbf,stroke:#333,stroke-width:2px
+    classDef leaf fill:#dfd,stroke:#333,stroke-width:2px
+    classDef dataBox fill:#e0ffe0,stroke:#666,stroke-width:1px,border-radius:5px
